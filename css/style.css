@@ -101,28 +101,26 @@ input ::-webkit-input-placeholder {
 .wrapper .container #easter_egg {
   width: 100px;
 }
-.wrapper .inputs_for_currency {
+
+.inputs_for_currency {
   display: flex;
   justify-content: center;
 }
-.wrapper .inputs_for_currency img {
-  height: 50px;
-  transition: 1s all;
-}
-.wrapper .inputs_for_currency .input_and_currencies .input_for_currency {
+
+.input_and_currencies .input_for_currency {
   border-radius: 5px;
   display: flex;
   align-items: center;
   overflow: hidden;
   border: solid #c5cad8 2px;
 }
-.wrapper .inputs_for_currency .input_and_currencies .input_for_currency input {
+.input_and_currencies .input_for_currency input {
   width: 300px;
   height: 50px;
   padding: 10px;
   font-size: 30px;
 }
-.wrapper .inputs_for_currency .input_and_currencies .input_for_currency button {
+.input_and_currencies .input_for_currency button {
   width: 90px;
   max-height: 50px;
   padding: 8px;
@@ -130,10 +128,16 @@ input ::-webkit-input-placeholder {
   background-color: #fff;
   font-size: 30px;
 }
-.wrapper .inputs_for_currency .input_and_currencies .input_for_currency button:hover {
+.input_and_currencies .input_for_currency button:hover {
   color: #FC9704;
 }
-.wrapper .inputs_for_currency .input_and_currencies ul {
+
+img {
+  height: 50px;
+  transition: 1s all;
+}
+
+ul {
   position: absolute;
   width: 395px;
   overflow: hidden;
@@ -142,7 +146,7 @@ input ::-webkit-input-placeholder {
   background-color: #fff;
   border: 2px solid #c5cad8;
 }
-.wrapper .inputs_for_currency .input_and_currencies ul li {
+ul li {
   font-size: 25px;
   cursor: default;
   padding: 10px;
@@ -164,10 +168,6 @@ img:active {
   animation-duration: 0.2s;
 }
 
-li:hover {
-  background-color: #FFF0DE;
-}
-
 @keyframes arrows {
   0% {
     transform: rotate(0deg);
@@ -175,4 +175,7 @@ li:hover {
   100% {
     transform: rotate(-180deg);
   }
+}
+li:hover {
+  background-color: #FFF0DE;
 }

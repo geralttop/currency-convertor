@@ -19,58 +19,63 @@ input ::-webkit-input-placeholder { color: black;}
             width: 100px;
         }
     }
-    .inputs_for_currency{
+}
+
+.inputs_for_currency{
+    display: flex;
+    justify-content: center;
+}
+
+.input_and_currencies{
+    .input_for_currency{
+        border-radius: 5px;
         display: flex;
-        justify-content: center;
-        img{
+        align-items: center;
+        overflow: hidden;
+        border: solid #c5cad8 2px;
+        
+        input{
+            width: 300px;
             height: 50px;
-            transition: 1s all;
-            
+            padding: 10px;
+            font-size: 30px;
         }
-        .input_and_currencies{
-            .input_for_currency{
-                border-radius: 5px;
-                display: flex;
-                align-items: center;
-                overflow: hidden;
-                border: solid #c5cad8 2px;
-                
-                input{
-                    width: 300px;
-                    height: 50px;
-                    padding: 10px;
-                    font-size: 30px;
-                }
-                button{
-                    width: 90px;
-                    max-height: 50px;
-                    padding: 8px;
-                    color: #0390fc;
-                    background-color: #fff;
-                    font-size: 30px;
-                }
-                button:hover{
-                    color: #FC9704;
-                }
-                
-            }
-            ul{
-                position: absolute;
-                width: 395px;
-                overflow: hidden;
-                border-radius: 5px;
-                margin-top: 5px;
-                background-color: #fff;
-                border: 2px solid #c5cad8;
-                li{
-                    font-size: 25px;
-                    cursor: default;
-                    padding: 10px;
-                }
-            }
+        button{
+            width: 90px;
+            max-height: 50px;
+            padding: 8px;
+            color: #0390fc;
+            background-color: #fff;
+            font-size: 30px;
+        }
+        button:hover{
+            color: #FC9704;
         }
     }
 }
+
+img{
+    height: 50px;
+    transition: 1s all;
+    
+}
+
+ul{
+    position: absolute;
+    width: 395px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #fff;
+    border: 2px solid #c5cad8;
+    li{
+        font-size: 25px;
+        cursor: default;
+        padding: 10px;
+    }
+}
+
+
 @media (max-width: 880px){
     .container{
         width: 300px;
@@ -83,14 +88,11 @@ input ::-webkit-input-placeholder { color: black;}
         margin: 20px 0 20px 0;
     }
 }
+
 img:active{
     animation-name: arrows;
     animation-duration: 0.2s;
 }
-li:hover{
-    background-color: #FFF0DE;
-}
-
 @keyframes arrows{
     0%{
         transform: rotate(0deg);
@@ -98,4 +100,8 @@ li:hover{
     100%{
         transform: rotate(-180deg);
     }
+}
+
+li:hover{
+    background-color: #FFF0DE;
 }
