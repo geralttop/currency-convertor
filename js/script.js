@@ -156,3 +156,4 @@ function btd(){
 }
 easter_egg.addEventListener('click', btd)
 
+console.log('Изменил код для гитхаба');
