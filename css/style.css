@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  font-size: 18px;
+}
+
+/*--------------------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input ::-webkit-input-placeholder {
+  color: black;
+}
+
+.wrapper {
+  font-family: "Roboto", sans-serif;
+  min-height: 100%;
+  overflow: hidden;
+}
+.wrapper .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.wrapper .container #easter_egg {
+  width: 100px;
+}
+.wrapper .inputs_for_currency {
+  display: flex;
+  justify-content: center;
+}
+.wrapper .inputs_for_currency img {
+  height: 50px;
+  transition: 1s all;
+}
+.wrapper .inputs_for_currency .input_and_currencies .input_for_currency {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: solid #c5cad8 2px;
+}
+.wrapper .inputs_for_currency .input_and_currencies .input_for_currency input {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  font-size: 30px;
+}
+.wrapper .inputs_for_currency .input_and_currencies .input_for_currency button {
+  width: 90px;
+  max-height: 50px;
+  padding: 8px;
+  color: #0390fc;
+  background-color: #fff;
+  font-size: 30px;
+}
+.wrapper .inputs_for_currency .input_and_currencies .input_for_currency button:hover {
+  color: #FC9704;
+}
+.wrapper .inputs_for_currency .input_and_currencies ul {
+  position: absolute;
+  width: 395px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #fff;
+  border: 2px solid #c5cad8;
+}
+.wrapper .inputs_for_currency .input_and_currencies ul li {
+  font-size: 25px;
+  cursor: default;
+  padding: 10px;
+}
+
+@media (max-width: 880px) {
+  .container {
+    width: 300px;
+  }
+  .inputs_for_currency {
+    flex-wrap: wrap;
+  }
+  img {
+    margin: 20px 0 20px 0;
+  }
+}
+img:active {
+  animation-name: arrows;
+  animation-duration: 0.2s;
+}
+
+li:hover {
+  background-color: #FFF0DE;
+}
+
+@keyframes arrows {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
