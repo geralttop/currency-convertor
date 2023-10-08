@@ -4,10 +4,24 @@ const input = document.querySelectorAll('input');
 const ifc = document.querySelectorAll('.input_for_currency');
 const ul = document.querySelectorAll('ul');
 const li = document.querySelectorAll('li');
-const easter_egg = document.getElementById('easter_egg');
-
-let byn_to_dollar = 0.295;
-easter_egg.style.display = 'none';
+const exchanger_obj = { //курсы валют
+    'BYNUSD': 0.295,
+    'BYNEUR': 0.282,
+    'BYNRUB': 29.81,
+    'USDBYN': 3.33,
+    'USDEUR': 0.945,
+    'USDRUB': 99.3,
+    'EURBYN': 3.46,
+    'EURUSD': 1.045,
+    'EURRUB': 103.2,
+    'RUBBYN': 0.0327,
+    'RUBUSD': 0.0097,
+    'RUBEUR': 0.0093,
+    'BYNBYN': 1,
+    'RUBRUB': 1,
+    'USDUSD': 1,
+    'EUREUR': 1,
+}
 
 ul[0].style.display = 'none';
 ul[1].style.display = 'none';
@@ -15,86 +29,18 @@ ul[1].style.display = 'none';
 //TODO: currency conversion at input[0]
 input[0].addEventListener('input', function(){
     exchanger();
-    easter_egg_func(); //optional function. Just a easter egg for my classmates. 73 группа лучшая
 })
 
 function exchanger(){
-    if (btn[0].innerHTML == 'BYN' && btn[1].innerHTML == 'USD') {
-        input[1].value =(input[0].value * byn_to_dollar).toFixed(2); //The variable is only needed for easter egg
-    } else if (btn[0].innerHTML == 'BYN' && btn[1].innerHTML == 'EUR') {
-        input[1].value =(input[0].value * 0.282).toFixed(2);
-    } else if (btn[0].innerHTML == 'BYN' && btn[1].innerHTML == 'RUB') {
-        input[1].value =(input[0].value * 29.81).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == 'USD' && btn[1].innerHTML == 'BYN') {
-        input[1].value =(input[0].value * 3.33).toFixed(2);
-    } else if (btn[0].innerHTML == 'USD' && btn[1].innerHTML == 'EUR') {
-        input[1].value =(input[0].value * 0.945).toFixed(2);
-    } else if (btn[0].innerHTML == 'USD' && btn[1].innerHTML == 'RUB') {
-        input[1].value =(input[0].value * 99.3).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == 'EUR' && btn[1].innerHTML == 'BYN') {
-        input[1].value =(input[0].value * 3.46).toFixed(2);
-    } else if (btn[0].innerHTML == 'EUR' && btn[1].innerHTML == 'USD') {
-        input[1].value =(input[0].value * 1.045).toFixed(2);
-    } else if (btn[0].innerHTML == 'EUR' && btn[1].innerHTML == 'RUB') {
-        input[1].value =(input[0].value * 103.2).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == 'RUB' && btn[1].innerHTML == 'BYN') {
-        input[1].value =(input[0].value * 0.0327).toFixed(2);
-    } else if (btn[0].innerHTML == 'RUB' && btn[1].innerHTML == 'USD') {
-        input[1].value =(input[0].value * 0.0097).toFixed(2);
-    } else if (btn[0].innerHTML == 'RUB' && btn[1].innerHTML == 'EUR') {
-        input[1].value =(input[0].value * 0.0093).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == btn[1].innerHTML) {
-        input[1].value = input[0].value;
-    }
-    if (input[0].value.length > 10) {
-        input[0].value = input[0].value.slice(0,-1);
-    }
+    input[1].value = (input[0].value * exchanger_obj[btn[0].innerHTML+btn[1].innerHTML]).toFixed(2);
 }
 
 //TODO: function for currency conversion at input[1]
 input[1].addEventListener('input', exchanger2);
 
 function exchanger2(){
-    if (btn[0].innerHTML == 'BYN' && btn[1].innerHTML == 'USD') {
-        input[0].value =(input[1].value / 0.295).toFixed(2);
-    } else if (btn[0].innerHTML == 'BYN' && btn[1].innerHTML == 'EUR') {
-        input[0].value =(input[1].value / 0.282).toFixed(2);
-    } else if (btn[0].innerHTML == 'BYN' && btn[1].innerHTML == 'RUB') {
-        input[0].value =(input[1].value / 29.81).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == 'USD' && btn[1].innerHTML == 'BYN') {
-        input[0].value =(input[1].value / 3.33).toFixed(2);
-    } else if (btn[0].innerHTML == 'USD' && btn[1].innerHTML == 'EUR') {
-        input[0].value =(input[1].value / 0.945).toFixed(2);
-    } else if (btn[0].innerHTML == 'USD' && btn[1].innerHTML == 'RUB') {
-        input[0].value =(input[1].value / 99.3).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == 'EUR' && btn[1].innerHTML == 'BYN') {
-        input[0].value =(input[1].value / 3.46).toFixed(2);
-    } else if (btn[0].innerHTML == 'EUR' && btn[1].innerHTML == 'USD') {
-        input[0].value =(input[1].value / 1.045).toFixed(2);
-    } else if (btn[0].innerHTML == 'EUR' && btn[1].innerHTML == 'RUB') {
-        input[0].value =(input[1].value / 103.2).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == 'RUB' && btn[1].innerHTML == 'BYN') {
-        input[0].value =(input[1].value / 0.0327).toFixed(2);
-    } else if (btn[0].innerHTML == 'RUB' && btn[1].innerHTML == 'USD') {
-        input[0].value =(input[1].value / 0.0097).toFixed(2);
-    } else if (btn[0].innerHTML == 'RUB' && btn[1].innerHTML == 'EUR') {
-        input[0].value =(input[1].value / 0.0093).toFixed(2);
-    } 
-    else if (btn[0].innerHTML == btn[1].innerHTML) {
-        input[1].value = input[0].value;
-    }
-    if (input[1].value.length > 10) {
-        input[1].value = input[1].value.slice(0,-1);
-    }
+    input[0].value = (input[1].value / exchanger_obj[btn[0].innerHTML+btn[1].innerHTML]).toFixed(2);
 }
-
 
 //TODO: swaps currencies when clicking on img
 img.addEventListener('click', swapper);
@@ -167,21 +113,3 @@ function currency_from_li(index){
         ul[0].style.display = 'none';
     }
 }
-
-//easter egg for 73ТП
-easter_egg.addEventListener('click', btd);
-
-function btd(){
-    byn_to_dollar = 73;
-    exchanger();
-}
-
-function easter_egg_func(){
-    if (input[0].value == 73) {
-        easter_egg.style.display = 'block';
-    } else {
-        easter_egg.style.display = 'none';
-    }
-}
-
-console.log('Изменил код для гитхаба');
