@@ -56,8 +56,7 @@ input ::-webkit-input-placeholder { color: black;}
 
 img{
     height: 50px;
-    transition: 1s all;
-    
+    transition: transform 0.15s ease;
 }
 
 ul{
@@ -89,18 +88,6 @@ ul{
     }
 }
 
-img:active{
-    animation-name: arrows;
-    animation-duration: 0.2s;
-}
-@keyframes arrows{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(-180deg);
-    }
-}
 
 li:hover{
     background-color: #FFF0DE;

@@ -45,11 +45,14 @@ function exchanger2(){
 //TODO: swaps currencies when clicking on img
 img.addEventListener('click', swapper);
 
+rotation = 0;
 function swapper(){
     let str = btn[0].innerHTML;
     btn[0].innerHTML = btn[1].innerHTML;
     btn[1].innerHTML = str;
-    exchanger();
+    rotation-=180;
+    img.style.transform = `rotate(${rotation}deg)`;
+    rotation = rotation < -10000 ? 0 : rotation;
 }
 
 //TODO: focusing and unfocusing on input
